@@ -33,22 +33,25 @@
     
   </tbody>
 </table>
-<script> typ="module">
+<script> type="module">
 import {ambilDaftarProduk} from'./main.js';
 
 $(document).ready(async function() {
  let elemenDaftar = $("#daftar-produk > tbody");
  let daftarproduk = await ambilDaftarProduk();
+ let nomor = 1;
  
  daftarProduk.forEac((data) =>{
    elemenDaftar.append(
      '<tr>' +
      '<td>' + '</td>'+
+      '<td>' + nomor + '</td>'+
      '<td>' + data.nama + '</td>'+
      '<td>' + data.harga + '</td>'+
      '<td>' + data.stok + '</td>'+
      '</tr>' 
  );
+ nomor = nomor + 1;
 });
 });
 </script>
